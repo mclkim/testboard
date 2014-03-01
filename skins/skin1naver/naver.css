@@ -1,0 +1,197 @@
+<
+style type =text /css> /*Default*/ td {
+	color: #000000;
+	font-family: ����;
+	font-size: 12px;
+	line-height: 16px
+}
+
+img {
+	border: none
+}
+
+textarea {
+	border: 1px solid #D6D6D6;
+}
+
+select {
+	font-size: 12px;
+	font-family: ����;
+	color: #000000;
+	border: 1px solid #CCCCCC
+}
+
+input {
+	border: 1px solid #D6D6D6;
+	font-size: 12px;
+	font-family: ����;
+	color: #000000;
+}
+
+a:link {
+	font-family: ����;
+	color: #000000;
+	text-decoration: none
+}
+
+a:visited {
+	font-family: ����;
+	color: #000000;
+	text-decoration: none
+}
+
+a:hover {
+	font-family: ����;
+	color: #8E8E8E;
+	text-decoration: none
+}
+
+a:active {
+	font-family: ����;
+	color: #8E8E8E;
+	text-decoration: none
+}
+
+.stit {
+	letter-spacing: -1px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+} /*������*/
+.stit_p {
+	letter-spacing: -1px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+} /*�˾�����*/
+.no {
+	font-family: 'verdana';
+	font-size: 11px;
+	padding-top: 1px
+} /*�Խù� Number*/
+.dot {
+	background-image:
+		url(http://static.naver.com/bbs/new_multi/01_dotline.gif);
+	height: 1px
+} /*������ dot Line*/
+.gray {
+	color: #8E8E8E;
+	font-family: ����;
+	font-size: 12px;
+}
+
+.box {
+	border: 1px solid #E2E2E2
+} /*�ڽ����� color*/
+.box_bg {
+	background-color: #FFFFFF
+} /*��ü bg*/
+.box_pop {
+	background-color: #B5B5B5
+} /*�˾�â ���*/
+.box_bot {
+	background-color: #EDEDED
+} /*�˾�â �ϴ�*/
+.box_edit {
+	background-color: #E4E4E4
+} /*����Ʈâ*/
+.box_g {
+	background-color: #F3F3F3
+} /*�˾�â �ڽ�*/
+.box_pink {
+	background-color: #FFF3F2
+} /*��ũ�ڽ�*/
+.chk0 {
+	border: 0px
+} /*üũ�ڽ��� ���� 0px*/
+.box2 {
+	border: 1px solid #C4CAD1
+} /*������ �ڽ� box Line*/
+.form {
+	font-family: verdana;
+	font-size: 11px
+} /*editing box�ؽ�Ʈ*/
+.editform {
+	width: 100%;
+	height: 200px;
+	overflow: auto;
+	scrollbar-face-color: #D7D7D7;
+	scrollbar-highlight-color: #D7D7D7;
+	scrollbar-shadow-color: #D7D7D7;
+	scrollbar-3dlight-color: #D7D7D7;
+	scrollbar-arrow-color: #FFFFFF;
+	scrollbar-track-color: #FFFFFF;
+	scrollbar-darkshadow-color: #FFFFFF;
+}
+
+.o {
+	color: #F26522;
+}
+
+a.o:link {
+	color: #F26522;
+	text-decoration: none
+}
+
+a.o:visited {
+	color: #F26522;
+	text-decoration: none
+}
+
+a.o:hover {
+	color: #F26522;
+	text-decoration: underline
+}
+
+a.o:active {
+	color: #F26522;
+	text-decoration: underline
+}
+/*re*/
+.re {
+	font-size: 10px;
+	font-family: 'verdana';
+	color: #5EAE18;
+	text-decoration: none;
+	letter-spacing: 0px;
+	font-weight: bold
+}
+
+a.re:link {
+	font-size: 10px;
+	font-family: 'verdana';
+	color: #5EAE18;
+	text-decoration: none;
+	letter-spacing: 0px;
+	font-weight: bold
+}
+
+a.re:visited {
+	font-size: 10px;
+	font-family: 'verdana';
+	color: #5EAE18;
+	text-decoration: none;
+	letter-spacing: 0px;
+	font-weight: bold
+}
+
+a.re:active {
+	font-size: 10px;
+	font-family: 'verdana';
+	color: #5EAE18;
+	text-decoration: underline;
+	letter-spacing: 0px;
+	font-weight: bold
+}
+
+a.re:hover {
+	font-size: 10px;
+	font-family: 'verdana';
+	color: #5EAE18;
+	text-decoration: underline;
+	letter-spacing: 0px;
+	font-weight: bold
+}
+</
+style
+>
