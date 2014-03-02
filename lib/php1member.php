@@ -34,8 +34,8 @@ class form1member extends form1list {
 		global $sysconf;
 		
 		echo ("\n<!-- javascript design -->\n");
-		echo ("<script language='javascript' src='$sysconf[home_inc]/js/default.js'></script>\n");
-		echo ("<script language='javascript' src='$sysconf[home_inc]/js/calendar.js'></script>\n");
+		echo ("<script language='javascript' src='$sysconf[home_js]/default.js'></script>\n");
+		echo ("<script language='javascript' src='$sysconf[home_js]/calendar.js'></script>\n");
 	}
 	
 	// 목록(회원정보) 보이기

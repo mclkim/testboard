@@ -387,7 +387,7 @@ class skin1blog extends form1board {
 					// 파일이름이 한글인 경우 오류발생(2001.12.21)
 					$image = urlencode ( $value ["name"] );
 					if (is_image ( $image ))
-						print_image ( $image, $sysconf ["home_image"], $value ["name"], '', '', '', 550 );
+						print_image ( $image, $sysconf ["db_image"], $value ["name"], '', '', '', 550 );
 					echo ("<p>\n");
 				} // end foreach
 			} // endif

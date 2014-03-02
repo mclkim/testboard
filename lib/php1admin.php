@@ -45,8 +45,8 @@ class form1admin extends form1form {
 		global $sysconf;
 		
 		echo ("\n<!-- javascript design -->\n");
-		echo ("<script language='javascript' src='$sysconf[home_inc]/js/default.js'></script>\n");
-		echo ("<script language='javascript' src='$sysconf[home_inc]/js/admin.js'></script>\n");
+		echo ("<script language='javascript' src='$sysconf[home_js]/default.js'></script>\n");
+		echo ("<script language='javascript' src='$sysconf[home_js]/admin.js'></script>\n");
 	}
 	function showlabel($field, $bgcolor = '#f0f0f0', $align = 'right', $width = '25', $color = '#000000') 	// override
 	{

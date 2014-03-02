@@ -84,13 +84,15 @@ function setsystemconfig($db) {
 	$sysconf ["path_home"] = http_url;
 	
 	// 데이타 상대경로(url)
-	$sysconf ["home_docs"] = "$sysconf[path_home]/docs";
+// 	$sysconf ["home_docs"] = "$sysconf[path_home]/docs";
 	$sysconf ["home_images"] = "$sysconf[path_home]/images";
-	$sysconf ["home_inc"] = "$sysconf[path_home]/inc";
+// 	$sysconf ["home_inc"] = "$sysconf[path_home]/inc";
+	$sysconf ["home_css"] = "$sysconf[path_home]/css";
+	$sysconf ["home_js"] = "$sysconf[path_home]/js";
 	$sysconf ["home_skins"] = "$sysconf[path_home]/skins";
-	$sysconf ["home_db"] = "$sysconf[path_home]/db/$db";
+// 	$sysconf ["home_db"] = "$sysconf[path_home]/db/$db";
 	
-	$sysconf ["home_image"] = "$sysconf[home_db]/upload";
+	$sysconf ["db_image"] = "$sysconf[home_db]/upload";
 	$sysconf ["icon_image"] = "$sysconf[home_images]/icon/default";
 	$sysconf ["type_image"] = "$sysconf[home_images]/type/default";
 	$sysconf ["img_image"] = "$sysconf[home_images]/img";

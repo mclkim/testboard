@@ -598,9 +598,9 @@ class form1new extends db_common {
 		global $sysconf;
 		
 		echo ("\n<!-- javascript design -->\n");
-		echo ("<script language='javascript' src='$sysconf[home_inc]/js/default.js'></script>\n");
-		echo ("<script language='javascript' src='$sysconf[home_inc]/js/cart.js'></script>\n");
-		echo ("<script language='javascript' src='$sysconf[home_inc]/js/calendar.js'></script>\n");
+		echo ("<script language='javascript' src='$sysconf[home_js]/default.js'></script>\n");
+		echo ("<script language='javascript' src='$sysconf[home_js]/cart.js'></script>\n");
+		echo ("<script language='javascript' src='$sysconf[home_js]/calendar.js'></script>\n");
 	}
 	
 	// 로딩 메세지 기능(2001.09.26)

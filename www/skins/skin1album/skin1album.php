@@ -99,7 +99,7 @@ class skin1album extends form1board {
 			echo ("    <tr>\n");
 			echo ("      <td width='20' height='$height[$align]'>&nbsp;</td>\n");
 			echo ("      <td width='$width[$align]' height='$height[$align]'>\n");
-			print_link ( "$this->prog?db=$db&mode=read&id=$key&page=$this->page&ff=$this->ff&fw=$this->fw", make_image ( $image, $sysconf ["home_image"], $title ), '', "title='$title'" );
+			print_link ( "$this->prog?db=$db&mode=read&id=$key&page=$this->page&ff=$this->ff&fw=$this->fw", make_image ( $image, $sysconf ["db_image"], $title ), '', "title='$title'" );
 			echo ("      <td width='20' height='$height[$align]'>&nbsp;</td>\n");
 			echo ("    </tr>\n");
 			

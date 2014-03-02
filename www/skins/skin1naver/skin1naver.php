@@ -152,7 +152,7 @@ class skin1naver extends form1board {
 				// 파일이름이 한글인경우 오류발생(2001.12.21)
 				$image = urlencode ( $value ["name"] );
 				if (is_image ( $image ))
-					print_image ( $image, $sysconf ["home_image"], $value ["name"] );
+					print_image ( $image, $sysconf ["db_image"], $value ["name"] );
 				echo ("<p>\n");
 			} // end foreach
 		} // endif
