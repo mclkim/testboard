@@ -21,7 +21,7 @@ if (defined ( '_lib_' ))
 	return;
 define ( '_lib_', true );
 
-require_once ('inc/common.inc');
+require_once ('../inc/common.inc');
 
 // i don't find any analog "php -m" and here is my one:
 function available_extensions() {

@@ -12,7 +12,7 @@
  * 수정일자   :
  * 수정내역   :
 \************************************************************************/
-require_once ('php1member.php');
+require_once ('../lib/php1member.php');
 
 // 인스턴스 변수 $inst를 new 연산자를 이용해 지정하고 있다.
 $inst = new form1member ();

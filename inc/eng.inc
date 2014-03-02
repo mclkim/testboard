@@ -302,8 +302,8 @@ $hint ["access_write"] = array (
 		"administrator" 
 );
 $hint ["address"] = "";
-$hint ["admin_mail"] = "(ex:durk007@chollian.net)";
-$hint ["admin_home"] = "(ex:http://www.chollian.net)";
+$hint ["admin_mail"] = "(ex:mclkim@daum.net)";
+$hint ["admin_home"] = "(ex:http://www.daum.net)";
 $hint ["admin_name"] = "<input type='button' value='$step[newpass]' class='button' onclick=remotewindow('$sysconf[testadmin]?db=$db&mode=newpass')>";
 $hint ["admin_password"] = "administrator password";
 $hint ["anniversary"] = "<input type='button' value='calendar' class='button' onclick=calendar(anniversary) readonly>";
@@ -379,7 +379,7 @@ $hint ["attachfile"] = array (
 		$menu ["enable"] 
 );
 $hint ["foldericon"] = "쓰레드 아이콘";
-$hint ["from_email"] = "(ex:durk007@chollian.net)";
+$hint ["from_email"] = "(ex:mclkim@daum.net)";
 $hint ["from_name"] = "빈칸없이 입력해 주십시오.(ex:홍길동)";
 $hint ["gradcolor"] = "<input type='button' value='color' class='button' onclick=setcolor('gradcolor')>";
 $hint ["hlinkcolor"] = "<input type='button' value='color' class='button' onclick=setcolor('hlinkcolor')>";

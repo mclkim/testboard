@@ -24,7 +24,7 @@ define ( '_config_', true );
  * [].아래부터 수정,삭제를 하시믄 안돼요...
  * \***********************************************************************
  */
-require_once ('inc/common.inc');
+require_once ('../inc/common.inc');
 require_once ('php1lib.php');
 /**
  * **********************************************************************\
@@ -40,15 +40,15 @@ function setsystemconfig($db) {
 	// 저작권 보호에 대한 정보
 	$sysconf ["description"] = "무료 게시판 소스";
 	$sysconf ["author"] = "김명철";
-	$sysconf ["contact"] = "durk007@chollian.net";
+	$sysconf ["contact"] = "mclkim@daum.net";
 	$sysconf ["content"] = "$sysconf[program_name] $sysconf[program_ver] $sysconf[program_date]";
 	$sysconf ["keywords"] = "$sysconf[program_name] $sysconf[program_ver] $sysconf[program_date]";
 	
 	// 스킨파일을 만든사람에 대한 정보
-	$sysconf ["board_maker"] = "durk007@chollian.net";
-	$sysconf ["board_home"] = "http://testboard.wo.tc";
-	$sysconf ["skin_maker"] = "durk007@chollian.net";
-	$sysconf ["skin_home"] = "http://testboard.wo.tc";
+	$sysconf ["board_maker"] = "mclkim@daum.net";
+	$sysconf ["board_home"] = "http://tb.mclkim.wo.tc";
+	$sysconf ["skin_maker"] = "mclkim@daum.net";
+	$sysconf ["skin_home"] = "http://tb.mclkim.wo.tc";
 	
 	// 프로그램명
 	$sysconf ["test"] = "test.php";
@@ -61,7 +61,8 @@ function setsystemconfig($db) {
 	$sysconf ["testmember"] = "testmember.php";
 	
 	// 절대경로
-	$sysconf ["path_host"] = path_fix ( dirname ( (__file__) ) );
+	$sysconf ["path_host"] = path_fix ( dirname ( dirname ( (__file__) ) ) );
+	$sysconf ["path_host"] = ROOT;
 	
 	// 데이타 절대경로
 	$sysconf ["path_docs"] = path_fix ( "$sysconf[path_host]/docs" );
@@ -181,9 +182,9 @@ function setdefineconfig() {
 	// 본 소스는 초기 비밀번호가 있슴다.
 	// 관리자의 아이디',초기비밀번호',이메일',홈페이지를 설정할 수 있슴다.
 	$defconf ["admin_name"] = '@-^-@';
-	$defconf ["admin_mail"] = 'durk007@chollian.net';
-	$defconf ["admin_home"] = 'http://testboard.wo.tc';
-	$defconf ["admin_password"] = '';
+	$defconf ["admin_mail"] = 'mclkim@daum.net';
+	$defconf ["admin_home"] = 'http://tb.mclkim.wo.tc';
+	$defconf ["admin_password"] = 'test!@#';
 	
 	$defconf ["langfile"] = 'kor.inc';
 	$defconf ["db_engine"] = 'file';

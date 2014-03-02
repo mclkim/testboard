@@ -12,7 +12,7 @@
  * 수정일자   :
  * 수정내역   :
 \************************************************************************/
-require_once ('inc/common.php');
+require_once ('common.php');
 class db_oci8 extends db_common {
 	var $db_host = null; // 호스트
 	var $db_user = null; // 사용자

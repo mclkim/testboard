@@ -10,7 +10,7 @@
  * 수정일자   :
  * 수정내역   :
 \************************************************************************/
-require_once ('php1board.php');
+require_once ('../lib/php1board.php');
 class testman extends form1board {
 	// 환경설정 초기값 재정의
 	function resetconfig() {

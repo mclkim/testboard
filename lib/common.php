@@ -20,7 +20,7 @@ if (defined ( '_common_' ))
 	return;
 define ( '_common_', true );
 
-require_once ('inc/common.inc');
+require_once ('../inc/common.inc');
 require_once ('php1config.php');
 require_once ('php1session.php');
 

@@ -4,6 +4,12 @@
  */
 // define ( '_debug_', true );
 /**
+ * 
+ * @var unknown
+ */
+define ( 'DS', DIRECTORY_SEPARATOR );
+define ( 'ROOT', dirname ( dirname ( __FILE__ ) ) );
+/**
  * [].프로그램에 대한 정보
  * [].가능한 수정하지 않았으면 합니다.
  */

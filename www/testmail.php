@@ -10,7 +10,7 @@
  * 수정일자   :
  * 수정내역   :
 \************************************************************************/
-require_once ('php1board.php');
+require_once ('../lib/php1board.php');
 
 // <주의>파일이름과 클래스이름을 일치해야...
 class form1mail extends form1board {

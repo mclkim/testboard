@@ -308,8 +308,8 @@ $hint ["access_write"] = array (
 		"관리자만" 
 );
 $hint ["address"] = "";
-$hint ["admin_home"] = "(예:http://www.chollian.net)";
-$hint ["admin_mail"] = "(예:durk007@chollian.net)";
+$hint ["admin_home"] = "(예:http://www.daum.net)";
+$hint ["admin_mail"] = "(예:mclkim@daum.net)";
 $hint ["admin_name"] = "<input type='button' value='$step[newpass]' class='button' onclick=remotewindow('$sysconf[testadmin]?db=$db&mode=newpass')>";
 $hint ["admin_password"] = "관리자 비밀번호";
 $hint ["anniversary"] = "<input type='button' value='calendar' class='button' onclick=calendar(anniversary) readonly>";
@@ -373,7 +373,7 @@ $hint ["depth"] = "depth";
 $hint ["division"] = "";
 $hint ["dobaelimit"] = "시간/ip당 글쓰기 갯수를 제한합니다.(0이면 검사안함)";
 $hint ["domain"] = "접속도메인";
-$hint ["email"] = "(예:durk007@chollian.net)";
+$hint ["email"] = "(예:mclkim@daum.net)";
 $hint ["category"] = explode ( ",", $envconf ["category"] );
 $hint ["emailcontent"] = "";
 $hint ["emailsubject"] = "";
@@ -384,7 +384,7 @@ $hint ["entertype"] = array (
 $hint ["fileicon"] = "파일 형식 아이콘";
 $hint ["filelimit"] = "업로드 제한크기(단위:kbyte)";
 $hint ["foldericon"] = "쓰레드 아이콘";
-$hint ["from_email"] = "(예:durk007@chollian.net)";
+$hint ["from_email"] = "(예:mclkim@daum.net)";
 $hint ["from_name"] = "빈칸없이 입력해 주십시오.(예:홍길동)";
 $hint ["gradcolor"] = "<input type='button' value='색' class='button' onclick=setcolor('gradcolor')>";
 $hint ["hlinkcolor"] = "<input type='button' value='색' class='button' onclick=setcolor('hlinkcolor')>";

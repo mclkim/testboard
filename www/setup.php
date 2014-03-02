@@ -10,7 +10,7 @@
  * 수정일자   :
  * 수정내역   :
 \************************************************************************/
-require_once ('php1form.php');
+require_once ('../lib/php1form.php');
 class form1setup extends form1form {
 	function _resetstyle() {
 		echo ("<style>@import url('../skin/default/testboard.css');</style>");
@@ -64,13 +64,14 @@ class form1setup extends form1form {
 		$this->showmemo ( "<testboard>", $readme, 20, 80 );
 		echo ("</td></tr>\n");
 		// //////////////////////////////////////
-		if (get_perms ( "./db" ) == '707' || get_perms ( "./db" ) == '777') {
+		if (get_perms ( ROOT.DS."db" ) == '707' || get_perms ( ROOT.DS."db" ) == '777') {
 			echo ("<form name='readmeform' method='post' action='$this->prog'>\n");
 			echo ("<input type='hidden' name='mode' value='config'>\n");
 			
 			echo ("<tr><td align=center>\n");
-			if (empty ( $defconf ["admin_password"] ))
-				echo ("<font color=white>*.본 소스는 초기 패스워드가 없습니다.<font><p>\n");
+			if ($defconf ["admin_password"] === 'test!@#') {
+				echo ("<font color=white>*.본 소스는 초기 패스워드는 '$defconf[admin_password]' 입니다.<font><p>\n");
+			}
 			
 			echo ("<input type='submit' value='$btn[ok]' class='button'>\n");
 			echo ("</td></tr>\n");
@@ -203,6 +204,8 @@ switch ($inst->mode) {
 		break;
 	
 	case 'config' :
+		_debug ( $userid );
+		_debug ( $passwd );
 		if (! $inst->checkpassword ( $userid, $passwd ))
 			$inst->htmlerror ( $msg ["err_pass"] );
 		$inst->htmlheader ( false );

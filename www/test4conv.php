@@ -12,8 +12,8 @@
  * 수정일자   :
  * 수정내역   :
 \************************************************************************/
-require_once ('php1board.php');
-require_once ('inc/file.php');
+require_once ('../lib/php1board.php');
+require_once ('../lib/file.php');
 
 // 사용자 db가 없다면...
 if (empty ( $db )) {

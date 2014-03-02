@@ -17,7 +17,7 @@
  * 수정일자   :
  * 수정내역   :
 \************************************************************************/
-require_once ('inc/common.php');
+require_once ('common.php');
 /**
  * **********************************************************************\
  * [].데이타베이스 환경파일에서 설정가능(2002.07.13)
@@ -29,7 +29,7 @@ class db {
 	 * type
 	 */
 	static function &factory($type = 'file') {
-		include_once ("inc/${type}.php");
+		include_once ("${type}.php");
 		
 		$classname = "db_${type}";
 		
@@ -265,11 +265,9 @@ class form1new extends db_common {
 		
 		// 3.테스트보드 프로파일
 		$this->htmlprofile ();
-		
-		// 로딩 메세지 기능(2001.09.26)
-		$this->loadingbegin ();
-		
-		echo ("<html>\n");
+
+		echo ("<!DOCTYPE html>\n");
+		echo ("<html lang=\"ko\">\n");
 		echo ("<head>\n");
 
 		echo ("\n<title>$envconf[browsertitle]</title>\n");
@@ -278,6 +276,9 @@ class form1new extends db_common {
 		echo ("<meta name='Content' content='$sysconf[content]'>\n");
 		echo ("<meta name='Author' content='$sysconf[author]'>\n");
 		echo ("<meta name='Keywords' content='$sysconf[keywords]'>\n");
+		
+		// 로딩 메세지 기능(2001.09.26)
+		$this->loadingbegin ();
 		
 		// 링크타입
 		$linktype = empty ( $envconf ["linktype"] ) ? "none" : "underline";
