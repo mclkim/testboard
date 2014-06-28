@@ -122,6 +122,10 @@ class session {
 		if ($this->timeout > 0)
 			$this->expire ();
 	}
+	function init() {
+		$this->sess_key = md5 ( uniqid ( rand () ) );
+		$this->setsess ( "key", $this->sess_key );
+	}
 	function is_reg($key) {
 		return $this->sid == $key;
 	}
@@ -137,14 +141,15 @@ class session {
 		$this->save ();
 	}
 	function getsess($key) {
-		return $this->sess_vars [$key];
+		//return $this->sess_vars [$key];
+		return if_exists ( $this->sess_vars, $key );
 	}
 	function destroy() {
 		setcookie ( $this->sess_name, "" );
 		$sessionfile = path_fix ( "$this->save_path/$this->sid.$this->file_ext" );
 		return unlink ( $sessionfile );
 	}
-	function load() {
+	private function load() {
 		$result = array ();
 		
 		$sessionfile = path_fix ( "$this->save_path/$this->sid.$this->file_ext" );
@@ -158,7 +163,7 @@ class session {
 		
 		return $result;
 	}
-	function save() {
+	private function save() {
 		$content = base64_encode ( serialize ( $this->sess_vars ) );
 		
 		$sessionfile = path_fix ( "$this->save_path/$this->sid.$this->file_ext" );

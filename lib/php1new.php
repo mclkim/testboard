@@ -1,27 +1,29 @@
 <?php
-/************************************************************************\
+/**
+ * ---------------------------------------------------------------
  * 프로그램명 : 기본화면
  * 특기사항   : 1.데이타베이스를 구분,연결을 목적으로 한다.
-                2.머릿글(head),꼬리글(tail)html 기능(2001.04.12)
-                3.기본 본문 메시지 출력(예정)
-                4.접근허용검사(2001.12.27)
-                5.로딩 메세지 기능(2001.09.26)
-                6.쪽지 기능(예정)
-                7.글 정리를 위해서 바구니 기능(예정)
-                8.메시지화면에서 일정시간이 흐르면 자동으로 새로고침(예정)
+ *         2.머릿글(head),꼬리글(tail)html 기능(2001.04.12)
+ *         3.기본 본문 메시지 출력(예정)
+ *         4.접근허용검사(2001.12.27)
+ *         5.로딩 메세지 기능(2001.09.26)
+ *         6.쪽지 기능(예정)
+ *         7.글 정리를 위해서 바구니 기능(예정)
+ *         8.메시지화면에서 일정시간이 흐르면 자동으로 새로고침(예정)
  * 관련테이블 :
  * services   :
  * 작 성 자   : 김명철
  * 작성일자   : 2001/01
- * 수 정 자   :
- * 수정일자   :
+ * 수 정 자   : 김명철
+ * 수정일자   : 2014/03
  * 수정내역   :
-\************************************************************************/
+ * ---------------------------------------------------------------
+ */
 require_once ('common.php');
 /**
- * **********************************************************************\
+ * ---------------------------------------------------------------
  * [].데이타베이스 환경파일에서 설정가능(2002.07.13)
- * \***********************************************************************
+ * ---------------------------------------------------------------
  */
 class db {
 	/**
@@ -62,9 +64,9 @@ class db {
 	}
 }
 /**
- * **********************************************************************\
+ * ---------------------------------------------------------------
  * [].기본화면구성
- * \***********************************************************************
+ * ---------------------------------------------------------------
  */
 class form1new extends db_common {
 	var $obj = null;
@@ -100,13 +102,13 @@ class form1new extends db_common {
 		$this->timestamps ( "form1new" );
 		
 		// 세션설정
-		$this->db_common ();
+// 		$this->db_common ();
 		
 		// 환경설정을 재초기화
 		$this->resetconfig ();
 		
 		// 데이타베이스 적용
-		$this->obj = $this->factory ( $envconf ["db_engine"] );
+		$this->obj = $this->factory ( if_exists ( $envconf, 'db_engine' ) );
 	}
 	function free() {
 		$timestamp = max ( $this->obj->timestamps ) - min ( $this->obj->timestamps );
@@ -121,19 +123,19 @@ class form1new extends db_common {
 	}
 	
 	// 0.모드설정
-	function mode($_REQUEST) {
+	function mode($request) {
 		$this->prog = basename ( php_self );
-		$this->db = if_exists ( $_REQUEST, "db" );
-		$this->mode = if_exists ( $_REQUEST, "mode" );
-		$this->cmd = if_exists ( $_REQUEST, "cmd", $this->mode );
-		$this->id = if_exists ( $_REQUEST, "id" );
-		$this->page = if_exists ( $_REQUEST, "page" );
-		$this->ff = if_exists ( $_REQUEST, "ff" );
-		$this->fw = if_exists ( $_REQUEST, "fw" );
-		$this->fn = if_exists ( $_REQUEST, "fn" );
-		$this->sid = if_exists ( $_REQUEST, "sid" );
-		$this->selected = if_exists ( $_REQUEST, "selected" );
-		$this->db_engine = if_exists ( $_REQUEST, "db_engine" );
+		$this->db = if_exists ( $request, "db" );
+		$this->mode = if_exists ( $request, "mode" );
+		$this->cmd = if_exists ( $request, "cmd", $this->mode );
+		$this->id = if_exists ( $request, "id" );
+		$this->page = if_exists ( $request, "page" );
+		$this->ff = if_exists ( $request, "ff" );
+		$this->fw = if_exists ( $request, "fw" );
+		$this->fn = if_exists ( $request, "fn" );
+		$this->sid = if_exists ( $request, "sid" );
+		$this->selected = if_exists ( $request, "selected" );
+		$this->db_engine = if_exists ( $request, "db_engine" );
 	}
 	
 	// 모드변경
@@ -242,10 +244,10 @@ class form1new extends db_common {
 	// 1.테스트보드 프로파일
 	function htmlprofile() {
 		global $sysconf;
-		setlocale(LC_TIME, "ko");		
+		setlocale ( LC_TIME, "ko" );
 		echo ("\n");
 		echo ("<!------------------------------------------------------------------\n");
-		echo ("\t".program_name." ".program_ver." (update : ".program_date.")\n");
+		echo ("\t" . program_name . " " . program_ver . " (update : " . program_date . ")\n");
 		echo ("\n");
 		echo ("\tdistribution site : $sysconf[board_home]\n");
 		echo ("\ttechnical contact : $sysconf[board_maker]\n");
@@ -265,11 +267,11 @@ class form1new extends db_common {
 		
 		// 3.테스트보드 프로파일
 		$this->htmlprofile ();
-
+		
 		echo ("<!DOCTYPE html>\n");
 		echo ("<html lang=\"ko\">\n");
 		echo ("<head>\n");
-
+		
 		echo ("\n<title>$envconf[browsertitle]</title>\n");
 		echo ("<meta http-equiv='Content-Type' content='text/html;charset=$envconf[charset]'>\n");
 		echo ("<meta name='Description' content='$sysconf[description]'>\n");
@@ -634,9 +636,9 @@ class form1new extends db_common {
 		echo ("</script>\n");
 	}
 	/**
-	 * **********************************************************************\
+	 * ---------------------------------------------------------------
 	 * 기본태그출력함수
-	 * \***********************************************************************
+	 * ---------------------------------------------------------------
 	 */
 	function showtitle($field, $color = "black", $bgcolor = 'white', $colspan = '', $align = 'center') {
 		global $envconf, $label;

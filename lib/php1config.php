@@ -33,9 +33,9 @@ require_once ('php1lib.php');
  */
 function setsystemconfig($db) {
 	// 프로그램 버젼관리에 대한 정보
-	$sysconf ["program_name"] = program_name;
-	$sysconf ["program_ver"] = program_ver;
-	$sysconf ["program_date"] = program_date;
+	$sysconf ["program_name"] = PROGRAM_NAME;
+	$sysconf ["program_ver"] = PROGRAM_VER;
+	$sysconf ["program_date"] = PROGRAM_DATE;
 	
 	// 저작권 보호에 대한 정보
 	$sysconf ["description"] = "무료 게시판 소스";
@@ -84,13 +84,13 @@ function setsystemconfig($db) {
 	$sysconf ["path_home"] = http_url;
 	
 	// 데이타 상대경로(url)
-// 	$sysconf ["home_docs"] = "$sysconf[path_home]/docs";
+	$sysconf ["home_docs"] = "$sysconf[path_home]/docs";
 	$sysconf ["home_images"] = "$sysconf[path_home]/images";
-// 	$sysconf ["home_inc"] = "$sysconf[path_home]/inc";
+	$sysconf ["home_inc"] = "$sysconf[path_home]/inc";
 	$sysconf ["home_css"] = "$sysconf[path_home]/css";
 	$sysconf ["home_js"] = "$sysconf[path_home]/js";
 	$sysconf ["home_skins"] = "$sysconf[path_home]/skins";
-// 	$sysconf ["home_db"] = "$sysconf[path_home]/db/$db";
+	$sysconf ["home_db"] = "$sysconf[path_home]/db/$db";
 	
 	$sysconf ["db_image"] = "$sysconf[home_db]/upload";
 	$sysconf ["icon_image"] = "$sysconf[home_images]/icon/default";
@@ -176,9 +176,9 @@ function setsystemconfig($db) {
  */
 function setdefineconfig() {
 	// 프로그램 버젼관리에 대한 정보
-	$defconf ["program_name"] = program_name;
-	$defconf ["program_ver"] = program_ver;
-	$defconf ["program_date"] = program_date;
+	$defconf ["program_name"] = PROGRAM_NAME;
+	$defconf ["program_ver"] = PROGRAM_VER;
+	$defconf ["program_date"] = PROGRAM_DATE;
 	
 	// 관리자 정보에 대한 설명
 	// 본 소스는 초기 비밀번호가 있슴다.
@@ -378,7 +378,7 @@ unset ( $defconf );
 unset ( $envconf );
 
 // 환경설정 초기값 설정(시스템)
-$sysconf = setsystemconfig ( $db );
+$sysconf = setsystemconfig ( $db='test' );
 
 // 환경설정 초기값 읽기(기본)
 $defconf = loaddefineconfig ( $sysconf ["file_def"] );

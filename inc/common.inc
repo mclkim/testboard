@@ -2,20 +2,20 @@
 /**
  * [].디버그를 위한...
  */
-// define ( '_debug_', true );
+define ( '_debug_', true );
+define ( 'ENVIRONMENT', 'development' );
 /**
  * 
- * @var unknown
  */
-define ( 'DS', DIRECTORY_SEPARATOR );
+define ( 'DS', '/' );
 define ( 'ROOT', dirname ( dirname ( __FILE__ ) ) );
 /**
  * [].프로그램에 대한 정보
  * [].가능한 수정하지 않았으면 합니다.
  */
-define ( 'program_name', "Testboard" );
-define ( 'program_ver', "Rev" );
-define ( 'program_date', "2014.02.17" );
+define ( 'PROGRAM_NAME', "Testboard" );
+define ( 'PROGRAM_VER', "Rev" );
+define ( 'PROGRAM_DATE', "2014.02.17" );
 /**
  * [].경고메시지를 error_reporting()을 사용함으로써 은폐시킬 수 있다.
  */
@@ -29,13 +29,26 @@ if (! defined ( '_debug_' ))
 
 error_reporting ( $error_flags );
 ini_set ( 'error_reporting', $error_flags );
-/**
- * 한국시간(timezone)설정
- * http://kr2.php.net/manual/en/timezones.php)
- */
-if (! ini_get ( 'date.timezone' ) && function_exists ( 'date_default_timezone_set' )) {
-	date_default_timezone_set ( "Asia/Seoul" );
+
+if (defined ( 'ENVIRONMENT' )) {
+	switch (ENVIRONMENT) {
+		case 'development' :
+			error_reporting ( E_ALL );
+			ini_set ( 'display_errors', 'on' );
+			break;
+		case 'testing' :
+			error_reporting ( E_ALL );
+			ini_set ( 'display_errors', 'off' );
+			break;
+		case 'production' :
+			error_reporting ( 0 );
+			ini_set ( 'display_errors', 'off' );
+			break;
+		default :
+			exit ( 'The application environment is not set correctly.' );
+	}
 }
+
 
 /**
  * [].sets a user-defined error handler function.
@@ -109,9 +122,6 @@ define ( 'shortdateformat', 'Y/m/d' );
  * [].초기값(기초값)
  * \***********************************************************************
  */
-if (! ini_get ( 'date.timezone' ) && function_exists ( 'date_default_timezone_set' )) {
-	date_default_timezone_set ( "Asia/Seoul" );
-}
 define ( 'http_url', 'http://' . dirname ( $_SERVER ["HTTP_HOST"] . $_SERVER ["PHP_SELF"] ) );
 define ( 'document_root', $_SERVER ["DOCUMENT_ROOT"] );
 define ( 'php_self', $_SERVER ["PHP_SELF"] );
@@ -134,6 +144,14 @@ define ( 'server_software', $_SERVER ["SERVER_SOFTWARE"] );
  */
 define ( 'port_smtp', 25 ); // smtp 의 포트번호를 정한다.
 define ( 'port_pop3', 110 ); // pop3 의 포트번호를 정한다.
+
+/**
+ * 한국시간(timezone)설정
+ * http://kr2.php.net/manual/en/timezones.php)
+ */
+if (! ini_get ( 'date.timezone' ) && function_exists ( 'date_default_timezone_set' )) {
+	date_default_timezone_set ( "Asia/Seoul" );
+}
                              
 // print_r($_SERVER);exit;
 ?>

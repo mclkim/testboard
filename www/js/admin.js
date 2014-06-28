@@ -1,4 +1,3 @@
-<!--
 function tabindex(num)
 {
 	for(i=0;i<tab.length;i++)
@@ -11,4 +10,3 @@ function tabindex(num)
 		line[i].className = 'rolloff';
 	}//end if else
 }
-// -->

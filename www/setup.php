@@ -6,12 +6,13 @@
  * services   :
  * 작 성 자   : 김명철
  * 작성일자   : 2003/04
- * 수 정 자   :
- * 수정일자   :
+ * 수 정 자   : 김명철
+ * 수정일자   : 2014/03
  * 수정내역   :
 \************************************************************************/
 require_once ('../lib/php1form.php');
-class form1setup extends form1form {
+require_once ('../lib/php1new.php');
+class form1setup extends form1new {
 	function _resetstyle() {
 		echo ("<style>@import url('../skin/default/testboard.css');</style>");
 	}
@@ -28,7 +29,7 @@ class form1setup extends form1form {
 		}
 		
 		$envconf ["tablewidth"] = "700"; // 게시판 너비
-		$envconf ["backcolor"] = $envconf ["titlebkcol"];
+		$envconf ["backcolor"] = if_exists($envconf, 'titlebkcol');
 		
 		$hint ["admin_name"] = "";
 		$hint ["mysql_host"] = "mysql db의 호스트 네임을 입력하세요";
@@ -184,9 +185,11 @@ class form1setup extends form1form {
 
 // 인스턴스 변수 $inst를 new 연산자를 이용해 지정하고 있다.
 $inst = new form1setup ();
-
+phpinfo();
+exit;
 // 모드설정
 $inst->mode ( $_REQUEST );
+
 $inst->mode_swap ( $inst->mode, $inst->cmd );
 
 // 홈페이지 시작
